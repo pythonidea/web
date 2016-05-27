@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage
 from qa.models import Question, Answer
 from django.shortcuts import render, get_object_or_404
+from qa.forms import AnswerForm
 
 
 def test(request, *args, **kwargs):
