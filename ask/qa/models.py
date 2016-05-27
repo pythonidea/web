@@ -4,6 +4,12 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
 
+class QuestionManager(models.Manager):
+    def new():
+        pass
+    def popular():
+        pass
+
 class Question(models.Model):
     title = models.CharField(max_length=100)
     text = models.TextField()
@@ -11,6 +17,7 @@ class Question(models.Model):
     rating = models.IntegerField(default=0)
     author = models.ForeignKey(User, blank=True, null=True)
     likes = models.ManyToManyField(User, related_name='set_qlikes')
+    objects = QuestionManager()
 
 class Answer(models.Model):
     text = models.TextField()
